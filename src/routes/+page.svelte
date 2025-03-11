@@ -1,11 +1,138 @@
-<script>
+<script lang="ts">
     import Image from "$lib/image.svelte";
+    import { imagesState } from "../store";
+    import { onMount, onDestroy } from "svelte";
+
+    let error: string | null = null;
+    let gallery: HTMLElement | null = null;
+    let observer: IntersectionObserver | null = null;
+    let observedIndex = 0;
+    let lastImgObserver: IntersectionObserver | null = null;
+
+    async function fetchImages() {
+        try {
+            const data = await fetch('/api/');
+            if (!data.ok) throw new Error("Failed to fetch images.");
+            const files = await data.json();
+            // console.log('images:', files.tree);
+            return files.tree;
+        } catch (err: unknown) {
+            error = err instanceof Error ? err.message : String(err);
+        }
+    }
+
+    function handleScroll(event: Event) {
+        if (event instanceof WheelEvent && Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+            console.log("Scroll direction:", event.deltaX > 0 ? "right" : "left");
+        }
+    }
+
+    function observeImages() {
+        if (!gallery) return;
+
+        // Disconnect existing observer if already set
+        if (observer) observer.disconnect();
+
+        observer = new IntersectionObserver(entries => {
+            entries.forEach(async entry => {
+                entry.target.classList.toggle('show', entry.isIntersecting);
+                if (!entry.isIntersecting) return;
+                observeNewImages();
+            });
+        },
+        { 
+            root: gallery,
+            threshold: 0.3
+        });
+
+        // Observe each image
+        for (let child of gallery.children) {
+            observer.observe(child);
+        }
+    }
+
+    function observeNewImages() {
+        if (!gallery || !observer) return;
+
+        for (let child of gallery.children) {
+            const curr = Number(child.id);
+            if (curr > observedIndex) {
+                observedIndex = curr;
+                // console.log('observedIndex:', observedIndex);
+                observer.observe(child);
+            }
+        }
+    }
+
+    let index = 0;
+
+    function observeLastImage() {
+        if (!gallery) return;
+
+        lastImgObserver = new IntersectionObserver(entries => {
+            const lastImg = entries[0];
+            if(!lastImg.isIntersecting) return;
+            // console.log('last image:', lastImg);
+            // console.log('cloning:', $imagesState[index].path)
+            const newImgState = [...$imagesState, {path: $imagesState[index].path}]
+            index++;
+            imagesState.set(newImgState);
+            lastImgObserver?.unobserve(lastImg.target);
+            if(gallery){
+                lastImgObserver?.observe(gallery.children[gallery.children.length - 1]);
+            }
+            
+        }, { 
+            root: gallery,
+            threshold: 0.1
+        })
+
+        lastImgObserver.observe(gallery.children[gallery.children.length - 1]);
+    }
+
+    onMount(async () => {
+        console.log("Component mounted");
+        gallery = document.getElementById('galleryCont');
+
+        if (gallery) {
+            gallery.addEventListener('wheel', handleScroll);
+            gallery.addEventListener('touchmove', handleScroll);
+        }
+
+        await imagesState.set(await fetchImages());
+        observeImages();
+        observeLastImage();
+    });
+
+    onDestroy(() => {
+        if (gallery) {
+            gallery.removeEventListener('wheel', handleScroll);
+            gallery.removeEventListener('touchmove', handleScroll);
+        }
+        if (observer) observer.disconnect();
+    });
 </script>
 
-<div id="bg" class="bg-green-400 h-screen w-full flex justify-center">
-    <div id="content" class="bg-red-200 w-full flex items-center">
-        <div id="galleryCont" class="bg-yellow-200 w-full h-1/2 flex flex-row justify-around overflow-x-scroll">
-            <!-- {#each } -->
+<div id="bg" class="h-screen w-full flex justify-center">
+    <div id="content" class="w-full flex items-center justify-center">
+        <div id="galleryCont" class="noScroll w-[95vw] h-2/3 flex flex-row justify-start items-center overflow-x-scroll overflow-y-hidden">
+            {#if $imagesState}
+                {#each $imagesState as image, index}
+                    <Image imgSrc={image['path']} imgId={index} />
+                {/each}
+            {/if}
         </div>
     </div>
 </div>
+
+<style>
+    .noScroll {
+        overflow: scroll;
+        scrollbar-width: none; /* For Firefox */
+        -ms-overflow-style: none;  /* For Internet Explorer 10+ */
+    }
+
+    .noScroll::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Opera */
+    }
+</style>

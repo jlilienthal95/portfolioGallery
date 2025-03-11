@@ -1,1 +1,13 @@
 @import 'tailwindcss';
+
+
+.image {
+    transform: translateY(80px);
+    opacity: 0;
+    transition: 300ms;
+}
+
+.image.show {
+    transform: translateY(0px);
+    opacity: 1;
+}

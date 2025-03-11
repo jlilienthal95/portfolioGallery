@@ -1,0 +1,58 @@
+{
+  "imgs": {
+    "sha": "ed1dc0dfab6ed82bf2f81816a101f585cf5e6ead",
+    "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/trees/ed1dc0dfab6ed82bf2f81816a101f585cf5e6ead",
+    "tree": [
+      {
+        "path": "bridge.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e57099447502c2a5bc4cc18c84228b0c209a0f0f",
+        "size": 35407,
+        "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/e57099447502c2a5bc4cc18c84228b0c209a0f0f"
+      },
+      {
+        "path": "cat.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "55c1eeaa2988aa6d84cc618b7ce9f2b9c8997c3f",
+        "size": 34084,
+        "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/55c1eeaa2988aa6d84cc618b7ce9f2b9c8997c3f"
+      },
+      {
+        "path": "dog.jpeg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a967276ee46da22918473b5e314ef403965de61b",
+        "size": 50026,
+        "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/a967276ee46da22918473b5e314ef403965de61b"
+      },
+      {
+        "path": "island.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6cd1ae3442f30027c0c7e73126cb5bf541be717d",
+        "size": 21077,
+        "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/6cd1ae3442f30027c0c7e73126cb5bf541be717d"
+      },
+      {
+        "path": "thing.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "411325cb7222c0748fb9a3ab14f7a90468891c93",
+        "size": 538616,
+        "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/411325cb7222c0748fb9a3ab14f7a90468891c93"
+      },
+      {
+        "path": "tree.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "444a7bb643495ff022824e7783ef9eb4e72cff8f",
+        "size": 45040,
+        "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/444a7bb643495ff022824e7783ef9eb4e72cff8f"
+      }
+    ],
+    "truncated": false
+  },
+  "timestamp": 1741714321307
+}
