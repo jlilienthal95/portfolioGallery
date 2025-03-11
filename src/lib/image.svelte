@@ -6,11 +6,12 @@
     let isHovered = false;
 </script>
 
+
   <img
     id={imgId + ''}
-    src={"/images/" + imgSrc}
+    src={imgSrc}
     alt={imgAlt}
-    class="rounded-sm object-contain gallery-item image"
+    class="rounded-sm object-contain gallery-item image duration-2000"
     class:notExpanded={!isHovered}
     class:expanded={isHovered}
     on:mouseenter={() => isHovered = true}
@@ -20,7 +21,6 @@
   <style>
     .notExpanded {
       height: 300px;
-
     }
 
     .expanded {

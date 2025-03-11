@@ -14,8 +14,8 @@
             const data = await fetch('/api/');
             if (!data.ok) throw new Error("Failed to fetch images.");
             const files = await data.json();
-            // console.log('images:', files.tree);
-            return files.tree;
+            console.log('images:', files);
+            return files;
         } catch (err: unknown) {
             error = err instanceof Error ? err.message : String(err);
         }
@@ -99,6 +99,7 @@
             gallery.addEventListener('touchmove', handleScroll);
         }
 
+        await fetchImages()
         await imagesState.set(await fetchImages());
         observeImages();
         observeLastImage();
@@ -118,7 +119,7 @@
         <div id="galleryCont" class="noScroll w-[95vw] h-2/3 flex flex-row justify-start items-center overflow-x-scroll overflow-y-hidden">
             {#if $imagesState}
                 {#each $imagesState as image, index}
-                    <Image imgSrc={image['path']} imgId={index} />
+                    <Image imgSrc={image['path'].replace(/static\//g, "")} imgId={index} />
                 {/each}
             {/if}
         </div>

@@ -2,13 +2,21 @@ import { json } from '@sveltejs/kit';
 import fs from "fs/promises";
 import path from "path";
 
+type Image = {
+    path: string,
+    sha?: string,
+    size?: number,
+    type?: string,
+    url?: string,
+  };
+
 //Cache image list from Github here to avoid rate limiting
 const CACHE_FILE = path.resolve("static/imagesCache.json");
 //Wait this long - 15M - before making another API call to Github
 const CACHE_TIME = 15 * 60 * 1000;
 const owner = 'jlilienthal95';
 const repo = 'portfolioGallery';
-const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/ed1dc0dfab6ed82bf2f81816a101f585cf5e6ead`
+const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/main?recursive=1`
 
 export async function GET() {
     //try to fetch images
@@ -27,7 +35,7 @@ export async function GET() {
             console.log('Date.now() - cacheData.timestamp', Date.now() - cacheData.timestamp);
             console.log('Date.now() - cacheData.timestamp < CACHE_TIME:', (Date.now() - cacheData.timestamp) < CACHE_TIME);
             console.log('Serving cached data...');
-            return json(cacheData.imgs);
+            return json(cacheData.filePaths);
         }
         
         //if no cache, or CACHE_TIME has been exceeded, fetch from GitHub
@@ -42,9 +50,11 @@ export async function GET() {
         }
 
         const imgs = await response.json();
+        let filePaths = imgs["tree"]
+            .filter((img: Image) => img.path.includes("images/"));   
 
         //update cache for next fetch
-        await fs.writeFile(CACHE_FILE, JSON.stringify({ imgs, timestamp: Date.now()}, null, 2))
+        await fs.writeFile(CACHE_FILE, JSON.stringify({ filePaths, timestamp: Date.now()}, null, 2))
 
         return json(imgs);
     } catch (err){
