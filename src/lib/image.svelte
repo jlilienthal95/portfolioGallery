@@ -2,7 +2,6 @@
     export let imgSrc:string = ""
     export let imgAlt:string = ""
     export let imgId:number = 0
-
     let isHovered = false;
 </script>
 
@@ -11,7 +10,7 @@
     id={imgId + ''}
     src={imgSrc}
     alt={imgAlt}
-    class="rounded-sm object-contain gallery-item image duration-2000"
+    class="rounded-sm object-contain gallery-item image snap-center snap-always"
     class:notExpanded={!isHovered}
     class:expanded={isHovered}
     on:mouseenter={() => isHovered = true}
@@ -19,11 +18,27 @@
   /> 
 
   <style>
+    @media (min-width: 767px) {
     .notExpanded {
       height: 300px;
     }
 
     .expanded {
-      height: 500px;
+      height: 70%;
     }
+  }
+
+    @media (max-width: 767px) {
+      .notExpanded {
+      width: 100%;
+      max-width: 400px;
+      min-width: 300px;
+    }
+
+    .expanded {
+      width: 100%;
+      max-width: 500px;
+    }
+
+  }
   </style>

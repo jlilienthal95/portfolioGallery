@@ -21,12 +21,6 @@
         }
     }
 
-    function handleScroll(event: Event) {
-        if (event instanceof WheelEvent && Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-            console.log("Scroll direction:", event.deltaX > 0 ? "right" : "left");
-        }
-    }
-
     function observeImages() {
         if (!gallery) return;
 
@@ -94,10 +88,10 @@
         console.log("Component mounted");
         gallery = document.getElementById('galleryCont');
 
-        if (gallery) {
-            gallery.addEventListener('wheel', handleScroll);
-            gallery.addEventListener('touchmove', handleScroll);
-        }
+        // if (gallery) {
+        //     gallery.addEventListener('scroll', centerClosestItem);
+        //     // gallery.addEventListener('touchmove', handleScroll);
+        // }
 
         await fetchImages()
         await imagesState.set(await fetchImages());
@@ -106,17 +100,17 @@
     });
 
     onDestroy(() => {
-        if (gallery) {
-            gallery.removeEventListener('wheel', handleScroll);
-            gallery.removeEventListener('touchmove', handleScroll);
-        }
+        // if (gallery) {
+        //     gallery.removeEventListener('scroll', centerClosestItem);
+        //     // gallery.removeEventListener('touchmove', handleScroll);
+        // }
         if (observer) observer.disconnect();
     });
 </script>
 
 <div id="bg" class="h-screen w-full flex justify-center">
     <div id="content" class="w-full flex items-center justify-center">
-        <div id="galleryCont" class="noScroll w-[95vw] h-2/3 flex flex-row justify-start items-center overflow-x-scroll overflow-y-hidden">
+        <div id="galleryCont" class="noScroll w-[95vw] h-full flex md:flex-row flex-col justify-start items-center gap-4 md:overflow-x-scroll md:overflow-y-hidden overflow-y-scroll overflow-x-hidden scroll-smooth md:snap-x snap-y snap-mandatory snap-always py-10 md:py-10">
             {#if $imagesState}
                 {#each $imagesState as image, index}
                     <Image imgSrc={image['path'].replace(/static\//g, "")} imgId={index} />
@@ -127,10 +121,20 @@
 </div>
 
 <style>
-    .noScroll {
-        overflow: scroll;
-        scrollbar-width: none; /* For Firefox */
-        -ms-overflow-style: none;  /* For Internet Explorer 10+ */
+    @media (min-width: 767px) {
+        .noScroll {
+            overflow: scroll;
+            scrollbar-width: none; /* For Firefox */
+            -ms-overflow-style: none;  /* For Internet Explorer 10+ */
+        }
+    }
+
+    @media (max-width: 767px) {
+        .noScroll {
+            overflow-y: scroll;
+            scrollbar-width: none; /* For Firefox */
+            -ms-overflow-style: none;  /* For Internet Explorer 10+ */
+        }
     }
 
     .noScroll::-webkit-scrollbar {

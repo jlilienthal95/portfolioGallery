@@ -1,6 +1,14 @@
 {
   "filePaths": [
     {
+      "path": "static/images/ben-kolde-bs2Ba7t69mM-unsplash.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1c6c3184f3c2317850a5b199bcb25728088c8a2",
+      "size": 800905,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/b1c6c3184f3c2317850a5b199bcb25728088c8a2"
+    },
+    {
       "path": "static/images/bridge.jpg",
       "mode": "100644",
       "type": "blob",
@@ -17,6 +25,14 @@
       "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/55c1eeaa2988aa6d84cc618b7ce9f2b9c8997c3f"
     },
     {
+      "path": "static/images/damian-zaleski-RYyr-k3Ysqg-unsplash.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "247bf80b2c75d46263d34996208fb40acb9da2a8",
+      "size": 254990,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/247bf80b2c75d46263d34996208fb40acb9da2a8"
+    },
+    {
       "path": "static/images/dog.jpeg",
       "mode": "100644",
       "type": "blob",
@@ -25,20 +41,28 @@
       "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/a967276ee46da22918473b5e314ef403965de61b"
     },
     {
-      "path": "static/images/greece.jpg",
+      "path": "static/images/domenico-loia-hGV2TfOh0ns-unsplash.jpg",
       "mode": "100644",
       "type": "blob",
-      "sha": "3decd9970f3b96b8262c04912289f6fe5b2c5dc6",
-      "size": 490040,
-      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/3decd9970f3b96b8262c04912289f6fe5b2c5dc6"
+      "sha": "78dca18d1c2a66dd2c04df3582907705276f3d0f",
+      "size": 300673,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/78dca18d1c2a66dd2c04df3582907705276f3d0f"
     },
     {
-      "path": "static/images/hawaii.jpg",
+      "path": "static/images/firmbee-com-gcsNOsPEXfs-unsplash.jpg",
       "mode": "100644",
       "type": "blob",
-      "sha": "7c2f975040fc31ece5c3456523600f7c0bfb8d6a",
-      "size": 499131,
-      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/7c2f975040fc31ece5c3456523600f7c0bfb8d6a"
+      "sha": "62484cd5d02e51a9cfc662b8bd3bbb572d0a33f8",
+      "size": 356877,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/62484cd5d02e51a9cfc662b8bd3bbb572d0a33f8"
+    },
+    {
+      "path": "static/images/georgie-cobbs-bKjHgo_Lbpo-unsplash.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b937d66171bd594d079b37f80789647ebf3526f",
+      "size": 130203,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/3b937d66171bd594d079b37f80789647ebf3526f"
     },
     {
       "path": "static/images/island.jpg",
@@ -49,20 +73,60 @@
       "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/6cd1ae3442f30027c0c7e73126cb5bf541be717d"
     },
     {
-      "path": "static/images/italy.jpg",
+      "path": "static/images/josh-hild-xLQM7Tnqdpg-unsplash (1).jpg",
       "mode": "100644",
       "type": "blob",
-      "sha": "5fe0df11996b11938aad2e02b940fd4a4d046e88",
-      "size": 1000072,
-      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/5fe0df11996b11938aad2e02b940fd4a4d046e88"
+      "sha": "0eb1da424549a099e49041c5e5fa9e2056d3758e",
+      "size": 864888,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/0eb1da424549a099e49041c5e5fa9e2056d3758e"
     },
     {
-      "path": "static/images/mexico.jpg",
+      "path": "static/images/keith-tanner-R4EFle2r8yA-unsplash.jpg",
       "mode": "100644",
       "type": "blob",
-      "sha": "d056a0e271204bd5538de51e57c3367cfa301ec5",
-      "size": 688725,
-      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/d056a0e271204bd5538de51e57c3367cfa301ec5"
+      "sha": "b8ee0740750564241572cbb05c18181511c53869",
+      "size": 222977,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/b8ee0740750564241572cbb05c18181511c53869"
+    },
+    {
+      "path": "static/images/kevin-bhagat-zNRITe8NPqY-unsplash.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3758aa01c1463ec6a7b07e53f225d5e9c01219aa",
+      "size": 228873,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/3758aa01c1463ec6a7b07e53f225d5e9c01219aa"
+    },
+    {
+      "path": "static/images/minh-pham-HI6gy-p-WBI-unsplash.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a97126af3138e4fc98826b0efa18c4c17f5aabb",
+      "size": 389733,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/1a97126af3138e4fc98826b0efa18c4c17f5aabb"
+    },
+    {
+      "path": "static/images/patrick-tomasso-QMDap1TAu0g-unsplash.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36a29c8a682ffd0bf6aafefa52eaaa7a06c3055f",
+      "size": 1027449,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/36a29c8a682ffd0bf6aafefa52eaaa7a06c3055f"
+    },
+    {
+      "path": "static/images/sumup-Aqc7znjxROM-unsplash.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f531de75bd3f387c124c9dd76768d9a9d27a2367",
+      "size": 247006,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/f531de75bd3f387c124c9dd76768d9a9d27a2367"
+    },
+    {
+      "path": "static/images/sumup-nedMerQvxWQ-unsplash.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a4a344c4876a1cf8c8b3f63b0fd2a8e6d6a9eac",
+      "size": 234711,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/0a4a344c4876a1cf8c8b3f63b0fd2a8e6d6a9eac"
     },
     {
       "path": "static/images/thing.png",
@@ -79,7 +143,15 @@
       "sha": "444a7bb643495ff022824e7783ef9eb4e72cff8f",
       "size": 45040,
       "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/444a7bb643495ff022824e7783ef9eb4e72cff8f"
+    },
+    {
+      "path": "static/images/yiran-ding-O14gL2ZXStw-unsplash.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec14802d7cb11688b7f4a28effc7ee5027b038d6",
+      "size": 821392,
+      "url": "https://api.github.com/repos/jlilienthal95/portfolioGallery/git/blobs/ec14802d7cb11688b7f4a28effc7ee5027b038d6"
     }
   ],
-  "timestamp": 1741718604882
+  "timestamp": 1741797913987
 }
