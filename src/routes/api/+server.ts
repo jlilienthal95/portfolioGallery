@@ -58,7 +58,7 @@ export async function GET() {
         // await fs.writeFile(CACHE_FILE, JSON.stringify({ filePaths, timestamp: Date.now()}, null, 2))
 
 
-        return json(imgs);
+        return json(filePaths);
     } catch (err){
         console.error("Error fetching images:", err);
         return json({ error: "Failed to load images" }, { status: 500 });
