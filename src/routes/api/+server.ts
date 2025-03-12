@@ -40,9 +40,9 @@ export async function GET() {
         
         //if no cache, or CACHE_TIME has been exceeded, fetch from GitHub
         console.log('Fetching new data from GitHub...');
-        console.log('timestamp:', new Date(cacheData.timestamp));
-        console.log('Date.now() - cacheData.timestamp', Date.now() - cacheData.timestamp);
-        console.log('Date.now() - cacheData.timestamp < CACHE_TIME:', (Date.now() - cacheData.timestamp) < CACHE_TIME);
+        // console.log('timestamp:', new Date(cacheData.timestamp));
+        // console.log('Date.now() - cacheData.timestamp', Date.now() - cacheData.timestamp);
+        // console.log('Date.now() - cacheData.timestamp < CACHE_TIME:', (Date.now() - cacheData.timestamp) < CACHE_TIME);
         const response = await fetch(url)
         console.log('url:', url);
         if (!response.ok) {
