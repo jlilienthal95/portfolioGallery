@@ -50,15 +50,12 @@ export async function GET() {
         }
 
         const imgs = await response.json();
+        console.log("imgs:", imgs)
         let filePaths = imgs["tree"]
             .filter((img: Image) => img.path.includes("images/"));   
-
+        console.log('filePaths:', filePaths);
         //update cache for next fetch
-        try {
-            await fs.writeFile(CACHE_FILE, JSON.stringify({ filePaths, timestamp: Date.now()}, null, 2))
-        } catch(error){
-            console.log('failed to write file. Error:', error);
-        }
+        // await fs.writeFile(CACHE_FILE, JSON.stringify({ filePaths, timestamp: Date.now()}, null, 2))
 
 
         return json(imgs);
