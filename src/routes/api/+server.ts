@@ -54,7 +54,12 @@ export async function GET() {
             .filter((img: Image) => img.path.includes("images/"));   
 
         //update cache for next fetch
-        await fs.writeFile(CACHE_FILE, JSON.stringify({ filePaths, timestamp: Date.now()}, null, 2))
+        try {
+            await fs.writeFile(CACHE_FILE, JSON.stringify({ filePaths, timestamp: Date.now()}, null, 2))
+        } catch(error){
+            console.log('failed to write file. Error:', error);
+        }
+
 
         return json(imgs);
     } catch (err){
