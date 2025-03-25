@@ -44,18 +44,18 @@ export async function GET() {
         // console.log('Date.now() - cacheData.timestamp', Date.now() - cacheData.timestamp);
         // console.log('Date.now() - cacheData.timestamp < CACHE_TIME:', (Date.now() - cacheData.timestamp) < CACHE_TIME);
         const response = await fetch(url)
-        console.log('url:', url);
+        // console.log('url:', url);
         if (!response.ok) {
             return json({ error: 'Failed to fetch file list' }, { status: response.status });
         }
 
         const imgs = await response.json();
-        console.log("imgs:", imgs)
+        // console.log("imgs:", imgs)
         let filePaths = imgs["tree"]
             .filter((img: Image) => img.path.includes("images/"));   
-        console.log('filePaths:', filePaths);
+        // console.log('filePaths:', filePaths);
         //update cache for next fetch
-        // await fs.writeFile(CACHE_FILE, JSON.stringify({ filePaths, timestamp: Date.now()}, null, 2))
+        await fs.writeFile(CACHE_FILE, JSON.stringify({ filePaths, timestamp: Date.now()}, null, 2))
 
 
         return json(filePaths);

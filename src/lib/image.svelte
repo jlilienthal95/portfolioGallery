@@ -31,8 +31,8 @@
     @media (max-width: 767px) {
       .notExpanded {
       width: 100%;
-      max-width: 400px;
       min-width: 300px;
+      max-width: 400px;
     }
 
     .expanded {

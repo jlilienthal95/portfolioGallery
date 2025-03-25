@@ -14,7 +14,7 @@
             const data = await fetch('/api/');
             if (!data.ok) throw new Error("Failed to fetch images.");
             const files = await data.json();
-            console.log('images:', files);
+            // console.log('images:', files);
             return files;
         } catch (err: unknown) {
             error = err instanceof Error ? err.message : String(err);
@@ -66,12 +66,12 @@
         lastImgObserver = new IntersectionObserver(entries => {
             const lastImg = entries[0];
             if(!lastImg.isIntersecting) return;
-            // console.log('last image:', lastImg);
-            // console.log('cloning:', $imagesState[index].path)
+
             const newImgState = [...$imagesState, {path: $imagesState[index].path}]
             index++;
             imagesState.set(newImgState);
             lastImgObserver?.unobserve(lastImg.target);
+            
             if(gallery){
                 lastImgObserver?.observe(gallery.children[gallery.children.length - 1]);
             }
@@ -88,11 +88,6 @@
         console.log("Component mounted");
         gallery = document.getElementById('galleryCont');
 
-        // if (gallery) {
-        //     gallery.addEventListener('scroll', centerClosestItem);
-        //     // gallery.addEventListener('touchmove', handleScroll);
-        // }
-
         await fetchImages()
         await imagesState.set(await fetchImages());
         observeImages();
@@ -100,10 +95,6 @@
     });
 
     onDestroy(() => {
-        // if (gallery) {
-        //     gallery.removeEventListener('scroll', centerClosestItem);
-        //     // gallery.removeEventListener('touchmove', handleScroll);
-        // }
         if (observer) observer.disconnect();
     });
 </script>

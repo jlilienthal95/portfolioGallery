@@ -1,5 +1,21 @@
 @import 'tailwindcss';
 
+:root {
+    --fs-sm: 1rem;
+    --fs-md: 2rem;
+    --fs-lg: 3rem;
+    --fs-header: clamp(8rem, 10vw + 1rem, 12rem);
+}
+
+@media (width ) {
+    
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 .image {
     transform: translateY(80px);
