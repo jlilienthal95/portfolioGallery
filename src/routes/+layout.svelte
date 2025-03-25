@@ -14,7 +14,7 @@
 </script>
 
 
-<div id="bodyCont" class="relative flex flex-col w-screen h-[100dvh] bebas-neue-regular">
+<div id="bodyCont" class="relative flex flex-col w-screen h-[100dvh] bebas-neue-regular overflow-y-hidden">
 	<div id="header" class="absolute md:top-0 bottom-0 left-0 z-10 w-full h-fit bg-white py-6 md:px-14 px-2 bebas-neue-regular">
 		<div id="contentCont" class="flex flex-row justify-around md:justify-between items-center">
 			<a href="/">
