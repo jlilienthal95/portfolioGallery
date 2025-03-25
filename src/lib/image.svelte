@@ -1,11 +1,20 @@
 <script lang="ts">
-    export let imgSrc:string = ""
-    export let imgAlt:string = ""
-    export let imgId:number = 0
+    export let imgSrc:string = "";
+    export let imgAlt:string = "";
+    export let imgId:number = 0;
+    const onclick = null;
+
     let isHovered = false;
+
+    function imageClick(e) {
+        const target = e.target;
+        // console.log(target.classList);
+        // target.classList.add('center-animation', 'expanded');
+        return;
+    }
 </script>
 
-
+<button onclick={(e)=>imageClick(e)}>
   <img
     id={imgId + ''}
     src={imgSrc}
@@ -13,9 +22,10 @@
     class="rounded-sm object-contain gallery-item image snap-center snap-always"
     class:notExpanded={!isHovered}
     class:expanded={isHovered}
-    on:mouseenter={() => isHovered = true}
-    on:mouseleave={() => isHovered = false}
+    onmouseenter={() => isHovered = true}
+    onmouseleave={() => isHovered = false}
   /> 
+</button>
 
   <style>
     @media (min-width: 767px) {
@@ -29,7 +39,7 @@
   }
 
     @media (max-width: 767px) {
-      .notExpanded {
+    .notExpanded {
       width: 100%;
       min-width: 300px;
       max-width: 400px;

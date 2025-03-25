@@ -104,7 +104,7 @@
         <div id="galleryCont" class="noScroll w-[95vw] h-full flex md:flex-row flex-col justify-start items-center gap-4 md:overflow-x-scroll md:overflow-y-hidden overflow-y-scroll overflow-x-hidden scroll-smooth md:snap-x snap-y snap-mandatory snap-always py-10 md:py-10">
             {#if $imagesState}
                 {#each $imagesState as image, index}
-                    <Image imgSrc={image['path'].replace(/static\//g, "")} imgId={index} />
+                    <Image imgSrc={image['path'].replace(/static\//g, "")} imgId={index} onclick={()=>imageClick()}/>
                 {/each}
             {/if}
         </div>
