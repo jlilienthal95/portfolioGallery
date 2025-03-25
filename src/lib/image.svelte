@@ -14,7 +14,7 @@
     }
 </script>
 
-<button onclick={(e)=>imageClick(e)}>
+<!-- <button onclick={(e)=>imageClick(e)}> -->
   <img
     id={imgId + ''}
     src={imgSrc}
@@ -25,7 +25,7 @@
     onmouseenter={() => isHovered = true}
     onmouseleave={() => isHovered = false}
   /> 
-</button>
+<!-- </button> -->
 
   <style>
     @media (min-width: 767px) {
