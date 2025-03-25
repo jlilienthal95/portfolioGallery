@@ -39,7 +39,7 @@
 	
 	{#if $aboutIsOpen}
 		<modal class="absolute md:top-[25%] md:left-[25%] top-[10%] bg-white">
-			<div class="relative flex flex-col md:w-[50vw] lg:h-[45vh] h-[65vh] m-4 px-4 py-10 text-center justify-around rounded-lg border-2 border-gray-500 text-3xl">
+			<div class="relative flex flex-col md:w-[50vw] lg:h-[55vh] h-[65vh] m-4 px-4 py-10 text-center justify-around rounded-lg border-2 border-gray-500 xl:text-3xl sm:text-2xl text-xl">
 				<div id="xCont" class="absolute top-3 right-3 flex justify-end">
 					<button id="closeButton" onclick={()=>openAbout()} class="md:text-3xl cursor-pointer hover:text-cyan-500 duration-500 font-sans font-bold">
 						X
@@ -50,7 +50,7 @@
 					<a class="text-cyan-750 hover:text-cyan-500" href="https://github.com/jlilienthal95/portfolioGallery/tree/main/static/images" target="_blank" rel="noopener noreferrer">
 						this link
 					</a>
-					and click or touch "Add file". Then you can upload your own images in jpg or png format, and refresh this page. Scroll through the images and you'll see yours added to the gallery!*
+					and click or touch "Add file", then choose "Upload Files". Here you can upload your own images in jpg or png format. Commit directly to the main branch and click the green "Commit Changes" button. It may take up to a minute for the changes to reflect. Refresh this page. Scroll through the images and you'll see your images added to the gallery!*
 				</div>
 				<div class="font-bold md:text-xl text-lg">
 					*This is a public service. Uploads will be visible to any vistor of this site. By using this service you agree not to upload inappropriate materials including but not limited to nudity, violence, or copyrighted materials.

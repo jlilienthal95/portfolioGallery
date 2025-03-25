@@ -13,7 +13,7 @@ type Image = {
 //Cache image list from Github here to avoid rate limiting
 const CACHE_FILE = path.resolve("static/imagesCache.json");
 //Wait this long - 15M - before making another API call to Github
-const CACHE_TIME = 15 * 60 * 1000;
+const CACHE_TIME = 15 * 60 * 10000000;
 const owner = 'jlilienthal95';
 const repo = 'portfolioGallery';
 const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/main?recursive=1`
